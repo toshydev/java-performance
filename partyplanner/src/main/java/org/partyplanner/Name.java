@@ -1,4 +1,4 @@
-package org.example;
+package org.partyplanner;
 
 public record Name(
         String firstName,

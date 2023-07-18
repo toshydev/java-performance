@@ -1,4 +1,4 @@
-package org.example;
+package org.partyplanner;
 
 import java.io.IOException;
 import java.nio.file.Files;

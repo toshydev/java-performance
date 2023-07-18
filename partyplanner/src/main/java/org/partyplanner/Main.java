@@ -1,4 +1,4 @@
-package org.example;
+package org.partyplanner;
 
 import java.time.MonthDay;
 import java.time.format.DateTimeFormatter;

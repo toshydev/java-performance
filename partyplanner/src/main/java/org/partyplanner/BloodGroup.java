@@ -1,4 +1,4 @@
-package org.example;
+package org.partyplanner;
 
 public enum BloodGroup {
     A_POSITIVE("A+"),
