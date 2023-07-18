@@ -9,7 +9,7 @@ import java.io.PrintStream;
 import java.util.Date;
 import java.util.Locale;
 
-public class Main {
+public class TestdataGenerator {
     private static final Faker instance = Faker.instance(Locale.GERMAN);
     public static final int NUMBER_OF_PERSONS = 1_000;
 
