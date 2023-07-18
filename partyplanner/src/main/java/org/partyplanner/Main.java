@@ -18,7 +18,12 @@ public class Main {
         MonthDay biggestParty = null;
         int biggestPartySize = 0;
         for (Person person : people) {
-            int partySize = countPartySize(people, person);
+            int partySize = 0;
+            for (Person otherPerson : people) {
+                if (haveSameBirthday(person, otherPerson)) {
+                    partySize++;
+                }
+            }
             if (partySize > biggestPartySize) {
                 biggestPartySize = partySize;
                 biggestParty = MonthDay.from(person.birthday());
@@ -27,14 +32,8 @@ public class Main {
         return biggestParty;
     }
 
-    private static int countPartySize(List<Person> people, Person person) {
-        int partySize = 0;
-        for (Person otherPerson : people) {
-            if (person.birthday().isEqual(otherPerson.birthday())) {
-                partySize++;
-            }
-        }
-        return partySize;
+    private static boolean haveSameBirthday(Person person, Person otherPerson) {
+        return person.birthday().isEqual(otherPerson.birthday());
     }
 
     private static void printPersons(List<Person> people) {
