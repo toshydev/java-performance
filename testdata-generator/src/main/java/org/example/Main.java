@@ -8,14 +8,13 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Date;
 import java.util.Locale;
-import java.util.zip.ZipOutputStream;
 
 public class Main {
     private static final Faker instance = Faker.instance(Locale.GERMAN);
-    public static final int NUMBER_OF_PERSONS = 100_000_000;
+    public static final int NUMBER_OF_PERSONS = 1_000;
 
     public static void main(String[] args) throws IOException {
-        final PrintStream out = new PrintStream(new ZipOutputStream(new FileOutputStream("employees" + NUMBER_OF_PERSONS + ".zip")));
+        final PrintStream out = new PrintStream(new FileOutputStream("employees" + NUMBER_OF_PERSONS + ".csv"));
 
         for (int i = 0; i < NUMBER_OF_PERSONS; i++) {
             Name name = instance.name();
