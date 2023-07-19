@@ -36,6 +36,16 @@ public class TestdataGenerator {
     }
 
     private static void printValue(PrintStream out, String value, int numberOfCharacters) {
+        value = value
+                .replace("ä", "ae")
+                .replace("ö", "oe")
+                .replace("ü", "ue")
+                .replace("Ä", "Ae")
+                .replace("Ö", "Oe")
+                .replace("Ü", "Ue")
+                .replace("ß", "ss")
+                .replaceAll("[^a-zA-Z0-9 .+]", "");
+
         if (value.length() > numberOfCharacters) {
             out.print(value.substring(0, numberOfCharacters));
         } else {
